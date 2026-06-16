@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 *)",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:www.spherestudios.com)",
+      "Bash(ls -la /Users/winnie/cc-projects/portfolio 2>/dev/null && echo \"---DOWNLOADS---\" && ls -t ~/Downloads/*.html 2>/dev/null | head -10 && echo \"---DESKTOP---\" && ls -t ~/Desktop/*.html 2>/dev/null | head -10)",
+      "Bash(git --version)",
+      "Bash(git -C /Users/winnie/cc-projects/portfolio status)",
+      "Bash(git config *)",
+      "Bash(git init *)",
+      "Bash(git branch *)"
+    ]
+  }
+}
