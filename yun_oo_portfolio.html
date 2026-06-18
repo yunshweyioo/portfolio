@@ -892,8 +892,9 @@
   .skill-block { background: var(--surface); border: 1px solid var(--border); padding: 1.75rem; transition: background 0.3s, border-color 0.2s; }
   .skill-block:hover { border-color: rgba(194,85,47,0.28); }
   .skill-block-title {
-    font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;
+    font-family: var(--serif); font-style: italic; font-size: 1.4rem;
+    color: var(--ink); margin-bottom: 1.1rem; padding-bottom: 0.7rem;
+    border-bottom: 1px solid var(--border);
   }
   .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
   .tag {
@@ -924,6 +925,7 @@
     line-height: 1.1; color: var(--ink); margin-bottom: 1rem;
   }
   .contact-sub { font-size: 15px; color: var(--muted); font-weight: 300; max-width: 320px; }
+  .contact-bloom { width: 90px; height: 82px; display: block; margin-bottom: 1.4rem; }
   .contact-right {
     padding: 5rem 3rem 5rem 4rem;
     display: flex; flex-direction: column; justify-content: center; gap: 1.5rem;
@@ -1153,6 +1155,14 @@
   .stat-cap { font-family: var(--sans); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-top: 5px; }
   .stat-div { width: 1px; height: 38px; background: var(--border); flex-shrink: 0; }
 
+  /* ── TRUSTED BY ── */
+  .trusted-by { max-width: 1000px; margin: 1.4rem auto 3.5rem; padding: 0 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.95rem; }
+  .trusted-label { font-family: var(--serif); font-style: italic; font-size: 0.95rem; color: var(--muted); }
+  .trusted-logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.05rem; }
+  .trusted-logos > span:not(.trusted-sep) { font-family: var(--sans); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.17em; color: var(--ink); opacity: 0.6; transition: opacity 0.25s; }
+  .trusted-logos > span:not(.trusted-sep):hover { opacity: 1; }
+  .trusted-sep { color: var(--accent); opacity: 0.5; font-size: 0.68rem; }
+
   /* ── Featured work cards ── */
   #work-feature { padding: 2.75rem 0 1.5rem; }
   .work-feature-inner { max-width: 1040px; margin: 0 auto; padding: 0 3rem; }
@@ -1257,6 +1267,14 @@
   <div class="stat-col"><div class="stat-fig">3.5<span class="stat-unit"> yrs</span></div><div class="stat-cap">@ The Third Floor</div></div>
   <div class="stat-div"></div>
   <div class="stat-col"><div class="stat-fig">50+</div><div class="stat-cap">Artists Coordinated</div></div>
+</div>
+
+<!-- TRUSTED BY -->
+<div class="trusted-by reveal">
+  <span class="trusted-label">Trusted on productions for</span>
+  <div class="trusted-logos">
+    <span>MARVEL</span><span class="trusted-sep">✦</span><span>APPLE TV+</span><span class="trusted-sep">✦</span><span>WARNER BROS</span><span class="trusted-sep">✦</span><span>SONY</span><span class="trusted-sep">✦</span><span>PARAMOUNT</span>
+  </div>
 </div>
 
 <!-- WORK / FEATURED SHOWS -->
@@ -1864,7 +1882,7 @@
     </div>
     <div class="skills-grid">
       <div class="skill-block reveal reveal-delay-1">
-        <div class="skill-block-title"><span style="margin-right:6px;opacity:0.7">⚙</span>Production</div>
+        <div class="skill-block-title">Production</div>
         <div class="skill-tags">
           <span class="tag">Workflow Coordination</span>
           <span class="tag">Scheduling</span>
@@ -1877,7 +1895,7 @@
         </div>
       </div>
       <div class="skill-block reveal reveal-delay-2">
-        <div class="skill-block-title"><span style="margin-right:6px;opacity:0.7">🔧</span>Tools</div>
+        <div class="skill-block-title">Tools</div>
         <div class="skill-tags">
           <span class="tag">Asana</span>
           <span class="tag">Trello</span>
@@ -1889,7 +1907,7 @@
         </div>
       </div>
       <div class="skill-block reveal reveal-delay-3">
-        <div class="skill-block-title"><span style="margin-right:6px;opacity:0.7">💻</span>Software</div>
+        <div class="skill-block-title">Software</div>
         <div class="skill-tags">
           <span class="tag">Google Workspace</span>
           <span class="tag">Microsoft Office</span>
@@ -1924,7 +1942,8 @@
 <section id="contact">
   <div class="contact-inner">
     <div class="contact-left reveal">
-      <h2 class="contact-heading">Let's work<br><em style="font-style:italic;color:var(--accent)">together.</em></h2>
+      <svg class="contact-bloom" viewBox="0 0 220 200" aria-hidden="true"><g filter="url(#wcf)"><ellipse cx="70" cy="120" rx="46" ry="38" fill="url(#periF)"/><ellipse cx="150" cy="80" rx="50" ry="42" fill="url(#periF)"/><ellipse cx="110" cy="100" rx="34" ry="44" fill="url(#blushF)" transform="rotate(-18 110 100)"/><ellipse cx="140" cy="118" rx="40" ry="30" fill="url(#blushF)" transform="rotate(22 140 118)"/><ellipse cx="86" cy="92" rx="38" ry="30" fill="url(#blushF)" transform="rotate(28 86 92)"/><ellipse cx="116" cy="104" rx="20" ry="20" fill="url(#amberF)"/><ellipse cx="118" cy="102" rx="13" ry="13" fill="url(#coreF)"/></g></svg>
+      <h2 class="contact-heading">Let's make<br>something <em style="font-style:italic;color:var(--accent)">clear</em>.</h2>
       <p class="contact-sub">Available now — open to production, creative ops, and post-production roles, Bay Area and beyond.</p>
     </div>
     <div class="contact-right reveal reveal-delay-1">
