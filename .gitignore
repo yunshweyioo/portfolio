@@ -13,3 +13,6 @@ Thumbs.db
 # Logs & temp
 *.log
 node_modules/
+
+# Superpowers brainstorm working files (local, not shared)
+.superpowers/
