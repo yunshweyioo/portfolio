@@ -37,6 +37,7 @@
     --bg: #f4eee2;
     --surface: #fbf5ea;
     --petal: #ead7ac;
+    --page-wash: radial-gradient(55% 26% at 90% 13%, rgba(241,217,150,0.44), transparent 60%),radial-gradient(52% 24% at 7% 23%, rgba(150,186,220,0.46), transparent 60%),radial-gradient(50% 24% at 90% 37%, rgba(150,186,220,0.44), transparent 60%),radial-gradient(50% 24% at 10% 49%, rgba(241,217,150,0.40), transparent 60%),radial-gradient(54% 26% at 91% 61%, rgba(150,186,220,0.44), transparent 60%),radial-gradient(50% 24% at 12% 73%, rgba(241,217,150,0.38), transparent 60%),radial-gradient(54% 26% at 87% 85%, rgba(150,186,220,0.42), transparent 60%),radial-gradient(50% 24% at 28% 95%, rgba(241,217,150,0.36), transparent 60%);
     --hero-grad: linear-gradient(180deg,#cdddea 0%,#cdddea 70%,#dde3df 88%,#f4eee2 100%);
     --serif: 'DM Serif Display', Georgia, serif;
     --script: 'Pinyon Script', cursive;
@@ -59,6 +60,7 @@
     --bg: #241a14;
     --surface: #3a2a20;
     --petal: #5a4126;
+    --page-wash: radial-gradient(55% 26% at 90% 13%, rgba(210,180,110,0.15), transparent 60%),radial-gradient(52% 24% at 7% 23%, rgba(120,150,200,0.20), transparent 60%),radial-gradient(50% 24% at 90% 37%, rgba(120,150,200,0.19), transparent 60%),radial-gradient(50% 24% at 10% 49%, rgba(210,180,110,0.14), transparent 60%),radial-gradient(54% 26% at 91% 61%, rgba(120,150,200,0.19), transparent 60%),radial-gradient(50% 24% at 12% 73%, rgba(210,180,110,0.13), transparent 60%),radial-gradient(54% 26% at 87% 85%, rgba(120,150,200,0.18), transparent 60%),radial-gradient(50% 24% at 28% 95%, rgba(210,180,110,0.13), transparent 60%);
     --hero-grad: linear-gradient(180deg,#2c3142 0%,#2c3142 70%,#2e2a22 88%,#241a14 100%);
     --nav-bg: #241a14;
     --footer-bg: #241a14;
@@ -69,7 +71,7 @@
   body {
     font-family: var(--sans);
     background-color: var(--bg);
-    background-image: none;
+    background-image: var(--page-wash);
     background-repeat: no-repeat;
     color: var(--ink);
     line-height: 1.6;
@@ -1219,6 +1221,19 @@
       flex-basis: 100%;
       max-width: 100%;
     }
+  }
+
+  /* Paper grain texture overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0.5;
+    mix-blend-mode: soft-light;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
   }
 </style>
 </head>
