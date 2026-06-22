@@ -1207,26 +1207,40 @@
   }
 
   /* ── Career timeline relocated into the hero (right column) ── */
-  .hero-grid > .hero-left { align-self: stretch; justify-content: center; }
+  /* Two equal halves so the divider lands on the page midline */
+  .hero-grid { gap: 0; }
+  .hero-grid > .hero-left {
+    flex: 0 0 50%;
+    max-width: 50%;
+    align-self: stretch;
+    justify-content: center;
+    padding-right: clamp(1.5rem, 4vw, 4rem);
+  }
   .hero-timeline {
-    flex: 1 1 360px;
-    min-width: 290px;
+    flex: 0 0 50%;
+    max-width: 50%;
     align-self: stretch;
     display: flex;
     flex-direction: column;
     gap: 1.1rem;
-    padding-left: clamp(1.25rem, 4vw, 3.5rem);
+    padding-left: clamp(1.5rem, 4vw, 4rem);
     padding-top: 0.4rem;
     border-left: 1px solid var(--border);
   }
   .hero-timeline .timeline-label { margin-bottom: 0.25rem; }
   .hero-timeline .tl-dot { background: var(--accent); }
   @media (max-width: 760px) {
+    .hero-grid > .hero-left {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding-right: 0;
+    }
     .hero-timeline {
       border-left: none;
       padding-left: 0;
       padding-top: 0;
       flex-basis: 100%;
+      max-width: 100%;
     }
   }
 </style>
