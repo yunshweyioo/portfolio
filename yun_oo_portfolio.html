@@ -36,7 +36,7 @@
     --hairline: #d8ccb6;
     --bg: #f4eee2;
     --surface: #fbf5ea;
-    --hero-grad: linear-gradient(170deg,#cdddea 0%,#dfe6e0 40%,#f1ead8 72%,#f4eee2 100%);
+    --hero-grad: linear-gradient(180deg,#cdddea 0%,#cdddea 70%,#dde3df 88%,#f4eee2 100%);
     --page-grad: linear-gradient(180deg,#cdddea 0,#dfe6e0 230px,#eee3cf 440px,#f4eee2 660px);
     --serif: 'DM Serif Display', Georgia, serif;
     --script: 'Pinyon Script', cursive;
@@ -58,7 +58,7 @@
     --hairline: rgba(233,205,187,0.22);
     --bg: #241a14;
     --surface: #3a2a20;
-    --hero-grad: linear-gradient(170deg,#2c3142 0%,#34302c 40%,#33271f 72%,#241a14 100%);
+    --hero-grad: linear-gradient(180deg,#2c3142 0%,#2c3142 70%,#2e2a22 88%,#241a14 100%);
     --page-grad: linear-gradient(180deg,#2c3142 0,#34302c 230px,#33271f 440px,#241a14 660px);
     --nav-bg: #241a14;
     --footer-bg: #241a14;
@@ -69,7 +69,7 @@
   body {
     font-family: var(--sans);
     background-color: var(--bg);
-    background-image: var(--page-grad);
+    background-image: none;
     background-repeat: no-repeat;
     color: var(--ink);
     line-height: 1.6;
@@ -1106,7 +1106,7 @@
   .theme-toggle { border-radius: 20px; padding: 5px 12px; }
 
   /* ── Hero ── */
-  .hero { display: block; min-height: 0; border-bottom: none; }
+  .hero { display: block; min-height: 0; border-bottom: none; background-image: var(--hero-grad); background-repeat: no-repeat; }
   .hero-panel { margin: 0; border-radius: 0; overflow: visible; background: transparent; }
   .hero-grid { display: flex; flex-wrap: wrap; align-items: flex-start; gap: clamp(0.75rem, 1.5vw, 1.25rem); padding: 3rem 3rem 3.5rem; }
   .hero-left { padding: 0; border-right: none; display: flex; flex-direction: column; justify-content: center; flex: 0 1 auto; max-width: 640px; }
