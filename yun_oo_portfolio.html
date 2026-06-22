@@ -37,7 +37,6 @@
     --bg: #f4eee2;
     --surface: #fbf5ea;
     --hero-grad: linear-gradient(180deg,#cdddea 0%,#cdddea 70%,#dde3df 88%,#f4eee2 100%);
-    --page-grad: linear-gradient(180deg,#cdddea 0,#dfe6e0 230px,#eee3cf 440px,#f4eee2 660px);
     --serif: 'DM Serif Display', Georgia, serif;
     --script: 'Pinyon Script', cursive;
     --sans: 'DM Sans', system-ui, sans-serif;
@@ -59,7 +58,6 @@
     --bg: #241a14;
     --surface: #3a2a20;
     --hero-grad: linear-gradient(180deg,#2c3142 0%,#2c3142 70%,#2e2a22 88%,#241a14 100%);
-    --page-grad: linear-gradient(180deg,#2c3142 0,#34302c 230px,#33271f 440px,#241a14 660px);
     --nav-bg: #241a14;
     --footer-bg: #241a14;
   }
@@ -98,7 +96,6 @@
   .hero-left > *:nth-child(4) { animation-delay: 0.55s; }
   .hero-left > *:nth-child(5) { animation-delay: 0.7s; }
 
-  .hero-right { opacity: 0; animation: fadeIn 0.9s ease 0.5s forwards; }
 
   .js .reveal {
     opacity: 0;
@@ -115,13 +112,6 @@
   .reveal-delay-4 { transition-delay: 0.4s; }
 
   /* ── TIMELINE ── */
-  .hero-right {
-    padding: 3rem 3rem 3rem 4rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    overflow: hidden;
-  }
   .timeline-label {
     font-size: 10px;
     font-weight: 500;
@@ -445,13 +435,6 @@
   }
   .btn-secondary:hover { color: var(--ink); border-color: var(--ink); }
 
-  .hero-right {
-    padding: 5rem 3rem 5rem 6rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
-  }
 
   /* photo + stats row */
   .hero-top-row {
@@ -1074,7 +1057,6 @@
   .hero-title .word { display: inline-block; white-space: nowrap; }
   .hero-title .k { display: inline-block; }
 
-  .hero-right { position: relative; }
 
   /* tag wiggle */
   .tag:hover, .cs-tag:hover { animation: wiggle 0.35s ease; }
@@ -1123,7 +1105,6 @@
   .hero-cta { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
 
   /* Hero photo — watercolor blob with painterly wash behind */
-  .hero-right { padding: 0; display: flex; align-items: flex-start; justify-content: center; border-right: none; flex: 0 0 auto; }
   .hero-photo-wrap { position: relative; width: 250px; height: 225px; transform: scale(0.66); transform-origin: top left; margin: 0.4rem -84px -76px 0; }
   .hero-photo-wash { position: absolute; inset: 0; pointer-events: none; }
   .hero-photo-mask {
@@ -1181,10 +1162,6 @@
   .work-card-studio { text-align: center; font-family: var(--sans); font-size: 10px; letter-spacing: 0.04em; color: var(--muted); margin-top: 2px; }
 
   /* ── Timeline wrapper ── */
-  #timeline { padding: 2.5rem 0 1.5rem; }
-  .timeline-inner { max-width: 680px; margin: 0 auto; padding: 0 3rem; }
-  .timeline-inner .timeline-label { text-align: center; display: block; margin-bottom: 1.25rem; }
-  .timeline-inner .tl-dot { background: var(--accent); }
 
   /* ── Responsive ── */
   @media (max-width: 760px) {
@@ -1192,7 +1169,6 @@
     .hero-name-bloom { position: static; display: block; height: auto; width: clamp(130px, 42vw, 200px); margin: 0.6rem 0 0.2rem; }
     .hero-name-bloom svg { width: 100%; height: auto; }
     .hero-grid { grid-template-columns: 1fr; gap: 2rem; padding: 1.75rem 1.5rem 2.5rem; }
-    .hero-right { order: -1; }
     .work-cards { grid-template-columns: 1fr; }
     .logo-role { font-size: 8px; }
     nav { height: 60px; }
@@ -1203,7 +1179,6 @@
     .spark { display: none; }
     .tag:hover, .cs-tag:hover { animation: none; }
     .js .reveal { opacity: 1; transform: none; transition: none; }
-    .hero-right { opacity: 1; animation: none; }
   }
 
   /* ── Career timeline relocated into the hero (right column) ── */
