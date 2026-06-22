@@ -1248,20 +1248,44 @@
   .work-card.cs-open .work-card-cue .cue-arrow { transform: rotate(180deg); }
   .work-card:hover { transform: translateY(-4px); }
   .work-card.cs-open, .work-card.cs-open:hover { transform: none; }
-  /* Accordion panel (0fr->1fr animates to natural height) */
-  .cs-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s cubic-bezier(0.4,0,0.2,1); }
-  .work-card.cs-open .cs-panel { grid-template-rows: 1fr; }
-  .cs-panel-inner { min-height: 0; overflow: hidden; }
-  .work-card.cs-open { grid-column: 1 / -1; }
-  .cs-panel-inner .case-study { border-top: none; padding-top: 1.25rem; }
-  .cs-panel-inner .case-study:first-child { border-top: none; }
+  /* Open state: poster slides left & shrinks, case study opens on the right */
+  .cs-panel { display: none; }
+  .work-card.cs-open {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(1.5rem, 3.5vw, 3rem);
+  }
+  .work-card.cs-open .work-card-trigger {
+    flex: 0 0 auto;
+    width: clamp(160px, 19vw, 230px);
+    animation: posterSlideLeft 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .work-card.cs-open .work-card-hook { display: none; }
+  .work-card.cs-open .cs-panel {
+    display: block;
+    flex: 1 1 0%;
+    min-width: 0;
+    animation: csSlideIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .work-card.cs-open .cs-poster-thumb { display: none; }
+  .cs-panel-inner { min-width: 0; }
+  .cs-panel-inner .case-study { border-top: none; padding-top: 0; }
+  @keyframes posterSlideLeft { from { transform: translateX(34px); opacity: 0.55; } to { transform: none; opacity: 1; } }
+  @keyframes csSlideIn { from { opacity: 0; transform: translateX(-28px); } to { opacity: 1; transform: none; } }
   /* Card front: film poster */
   .work-card-poster { display: block; aspect-ratio: 4 / 5; border-radius: 10px; box-shadow: 0 8px 24px rgba(43,32,24,0.10); background-size: cover; background-position: center; }
   .wc-poster-ff { background-image: url('assets/poster-ff.jpg'); }
   .wc-poster-monarch { background-image: url('assets/poster-monarch.jpg'); }
   .wc-poster-venom { background-image: url('assets/poster-venom.jpg'); }
+  @media (max-width: 760px) {
+    .work-card.cs-open { flex-direction: column; gap: 1.25rem; align-items: stretch; }
+    .work-card.cs-open .work-card-trigger { width: min(62%, 230px); margin: 0 auto; }
+    .work-card.cs-open .cs-panel { width: 100%; }
+  }
   @media (prefers-reduced-motion: reduce) {
-    .cs-panel { transition: none; }
+    .work-card.cs-open .work-card-trigger,
+    .work-card.cs-open .cs-panel { animation: none; }
     .work-card-cue .cue-arrow { transition: none; }
   }
   .work-feature-sub { text-align: center; font-family: var(--sans); font-size: 12px; letter-spacing: 0.04em; color: var(--muted); margin: -0.8rem 0 1.6rem; }
