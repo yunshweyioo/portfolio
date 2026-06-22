@@ -784,6 +784,71 @@
     margin-bottom: 0.75rem;
   }
 
+  /* ── NARRATIVE: context lede, role, takeaway ── */
+  .cs-context {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink);
+    font-weight: 300;
+    max-width: 72ch;
+    margin-bottom: 2.5rem;
+  }
+  .cs-context strong { font-weight: 500; }
+
+  .cs-role { margin-bottom: 2.5rem; }
+  .cs-role-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.55rem 2.5rem;
+  }
+  .cs-role-list li {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.55;
+    padding-left: 1.15rem;
+    position: relative;
+  }
+  .cs-role-list li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    color: var(--accent);
+    font-size: 10px;
+  }
+  .cs-role-list li strong { color: var(--ink); font-weight: 500; }
+  @media (max-width: 768px) { .cs-role-list { grid-template-columns: 1fr; } }
+
+  .cs-takeaway {
+    margin-top: 2.25rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  .cs-takeaway-label {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    flex-shrink: 0;
+    width: 88px;
+    padding-top: 5px;
+  }
+  .cs-takeaway-text {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  @media (max-width: 768px) { .cs-takeaway { flex-direction: column; gap: 0.5rem; } }
+
   /* ── SAMPLE ARTIFACTS ── */
   .cs-artifact {
     margin-top: 2rem;
@@ -1587,6 +1652,8 @@
         </div>
       </div>
 
+      <p class="cs-context">A high-visibility Marvel feature with notes pouring in from <strong>more than ten client stakeholders and vendors</strong>. By the time I came onto the show, feedback lived in scattered inboxes, call recaps, and review-room memory — and the gap between what the client said and what the artists actually heard was widening by the week. A deliverable nearly went out with the wrong version. My job was to close that gap and keep it closed.</p>
+
       <div class="cs-flow">
         <div class="cs-flow-step">
           <div class="cs-flow-step-label">Challenge</div>
@@ -1609,6 +1676,18 @@
 
       <div class="cs-highlight">
         <strong>✦ Key moment</strong> When the client made a major mid-show change, there was no scramble — the system made the impact visible immediately and the team pivoted without losing a step.
+      </div>
+
+      <div class="cs-role">
+        <div class="cs-section-label">What I owned</div>
+        <ul class="cs-role-list">
+          <li>The single <strong>client-facing shot tracker</strong> — refreshed before every review</li>
+          <li>Per-lead <strong>ShotGrid views</strong> with status, priority &amp; OT-risk flags</li>
+          <li>Routing and ownership of <strong>every incoming client note</strong></li>
+          <li>Daily blocker triage with the supervisor and three leads</li>
+          <li>Version control on outgoing deliverables — the last check before client</li>
+          <li>Keeping 50+ artists working from one set of priorities</li>
+        </ul>
       </div>
 
       <div>
@@ -1646,6 +1725,11 @@
             </tbody>
           </table>
         </div>
+      </div>
+
+      <div class="cs-takeaway">
+        <div class="cs-takeaway-label">Takeaway</div>
+        <div class="cs-takeaway-text">The work that mattered most was never the glamorous part — it was making sure everyone read from the same page, every single day. Once the team trusted the tracker, the chaos quietly stopped being chaos.</div>
       </div>
     </div>
           </div>
@@ -1685,6 +1769,8 @@
         </div>
       </div>
 
+      <p class="cs-context">A detail-heavy Apple TV+ series that ran for roughly a year. The internal sequence numbers didn't match the names anyone actually used — so <strong>every review opened with ten minutes of translation</strong> before the team could even act on a note. On a show this precise, a single mismatched code could send feedback to the wrong shot. Nobody had flagged it; everyone had just learned to absorb the tax.</p>
+
       <div class="cs-flow">
         <div class="cs-flow-step">
           <div class="cs-flow-step-label">Challenge</div>
@@ -1707,6 +1793,18 @@
 
       <div class="cs-highlight">
         <strong>✦ Key moment</strong> I didn't wait to be asked — spotted a system costing everyone time every day, fixed it myself, and built something durable enough to last the whole show.
+      </div>
+
+      <div class="cs-role">
+        <div class="cs-section-label">What I owned</div>
+        <ul class="cs-role-list">
+          <li>Mapped <strong>every sequence code to its real name</strong>, end to end</li>
+          <li>Reorganized both the <strong>file directory and ShotGrid</strong> to match</li>
+          <li>Built a shared reference anyone on the show could use</li>
+          <li>Budget tracking — spend, POs, and hour forecasts</li>
+          <li>Onboarding reference for artists joining mid-run</li>
+          <li>Rolled it out by priority, without stopping production</li>
+        </ul>
       </div>
 
       <div>
@@ -1744,6 +1842,11 @@
             </tbody>
           </table>
         </div>
+      </div>
+
+      <div class="cs-takeaway">
+        <div class="cs-takeaway-label">Takeaway</div>
+        <div class="cs-takeaway-text">Nobody asked me to fix the naming — I just kept watching it cost people minutes they'd never get back. The lesson stuck: the highest-leverage work is often the unglamorous thing everyone has quietly learned to tolerate.</div>
       </div>
     </div>
           </div>
@@ -1783,6 +1886,8 @@
         </div>
       </div>
 
+      <p class="cs-context">A Sony feature split across <strong>LA and London with an eight-hour gap</strong> between them — so a full day of London's work had to land in LA every morning, or it didn't. During one deadline-heavy week, the overnight sync failed and a day of renders simply never arrived. We couldn't fix it ourselves, and waiting on IT meant hours we didn't have with a client review on the calendar.</p>
+
       <div class="cs-flow">
         <div class="cs-flow-step">
           <div class="cs-flow-step-label">Challenge</div>
@@ -1805,6 +1910,18 @@
 
       <div class="cs-highlight">
         <strong>✦ Key moment</strong> I didn't just flag the problem — I came to IT with a solution that made it easy to say yes. The fix outlasted the show.
+      </div>
+
+      <div class="cs-role">
+        <div class="cs-section-label">What I owned</div>
+        <ul class="cs-role-list">
+          <li>Daily <strong>EOD handoff summaries</strong> bridging LA and London</li>
+          <li>The brief I took to IT — scoped to minimize their lift</li>
+          <li>Rollout of <strong>manual sync access</strong> across both departments</li>
+          <li>Cross-timezone status alignment for two supervisors</li>
+          <li>Budget tracking — spend, POs, and hour forecasts</li>
+          <li>The post-mortem that turned the fix into company policy</li>
+        </ul>
       </div>
 
       <div>
@@ -1848,6 +1965,11 @@
             <div class="art-note-text"><span class="chip chip-approved">Verified</span> &nbsp;Manual re-sync confirmed complete 7:15pm PT.</div>
           </div>
         </div>
+      </div>
+
+      <div class="cs-takeaway">
+        <div class="cs-takeaway-label">Takeaway</div>
+        <div class="cs-takeaway-text">I learned to walk into IT with a solution, not just a problem — framed so the easy answer was yes. The fix outlived the show because it was never really about Venom; it was about removing a bottleneck everyone kept hitting.</div>
       </div>
     </div>
           </div>
