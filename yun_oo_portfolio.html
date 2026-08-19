@@ -48,6 +48,8 @@
     --nav-bg: #fdf6ec;
     --footer-bg: #241a14;
     --footer-ink: #fdf6ec;
+    --panel-head-bg: #5c3823;
+    --panel-head-ink: #fdf6ec;
   }
 
   [data-theme="dark"] {
@@ -70,6 +72,8 @@
     --nav-bg: #241a14;
     --footer-bg: #180f0a;
     --footer-ink: #e9cdbb;
+    --panel-head-bg: #4a3626;
+    --panel-head-ink: #e9cdbb;
   }
 
   html { scroll-behavior: smooth; }
@@ -813,13 +817,13 @@
   }
   .cs-artifact-head {
     display: flex; justify-content: space-between; align-items: baseline; gap: 0.3rem 1rem;
-    padding: 0.8rem 1.25rem;
-    border-bottom: 1px solid var(--border);
-    background: var(--accent-light);
+    padding: 0.85rem 1.25rem;
+    background: var(--panel-head-bg);
+    color: var(--panel-head-ink);
     flex-wrap: wrap;
   }
-  .cs-artifact-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
-  .cs-artifact-note { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
+  .cs-artifact-title { font-family: var(--serif); font-size: 0.95rem; color: var(--panel-head-ink); }
+  .cs-artifact-note { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--panel-head-ink); opacity: 0.66; }
   .art-scroll { overflow-x: auto; }
   .art-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
   .art-table th {
