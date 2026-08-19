@@ -46,7 +46,7 @@
     --script: 'Pinyon Script', cursive;
     --sans: 'Schibsted Grotesk', system-ui, sans-serif;
     --nav-bg: #fdf6ec;
-    --about-bg: #f2e5d0;
+    --about-bg: #eef2f8;
     --footer-bg: #241a14;
     --footer-ink: #fdf6ec;
     --panel-head-bg: #ece0d1;
@@ -71,7 +71,7 @@
     --page-wash: radial-gradient(55% 26% at 90% 13%, rgba(210,180,110,0.15), transparent 60%),radial-gradient(52% 24% at 7% 23%, rgba(120,150,200,0.20), transparent 60%),radial-gradient(48% 24% at 97% 38%, rgba(120,150,200,0.15), transparent 64%),radial-gradient(46% 23% at 2% 52%, rgba(210,180,110,0.12), transparent 64%),radial-gradient(50% 25% at 99% 66%, rgba(120,150,200,0.15), transparent 64%),radial-gradient(46% 23% at 1% 79%, rgba(210,180,110,0.11), transparent 64%),radial-gradient(44% 22% at 96% 88%, rgba(120,150,200,0.13), transparent 64%);
     --hero-grad: linear-gradient(180deg,#2c3142 0%,#2c3142 62%,rgba(44,49,66,0.55) 84%,rgba(44,49,66,0) 100%);
     --nav-bg: #241a14;
-    --about-bg: #2e211a;
+    --about-bg: #232028;
     --footer-bg: #180f0a;
     --footer-ink: #e9cdbb;
     --panel-head-bg: #46352a;
@@ -532,7 +532,6 @@
   }
 
   /* ── SECTIONS ── */
-  section { border-bottom: 1px solid var(--border); }
   .section-inner {
     max-width: 1100px;
     margin: 0 auto;
@@ -888,7 +887,6 @@
   .chip-delivered { color: var(--accent); background: var(--accent-light); }
   [data-theme="dark"] .chip-approved { color: #7FC79A; }
   [data-theme="dark"] .chip-progress { color: #DFC06A; }
-  [data-theme="dark"] #about { --muted: #b08e76; }
   [data-theme="dark"] .chip-hold, [data-theme="dark"] .chip-prio-low { color: #B6AFA7; background: rgba(190,182,173,0.16); }
   [data-theme="dark"] .chip-prio-high { color: #EE9384; background: rgba(230,120,105,0.16); }
   [data-theme="dark"] .chip-prio-med { color: #2B2018; background: #E9E2D8; box-shadow: none; }
@@ -914,8 +912,7 @@
      on this deeper band. */
   #about {
     background: var(--about-bg);
-    --muted: #6d5a3b;
-    --border: rgba(43,32,24,0.17);
+    --border: rgba(43,32,24,0.15);
   }
   .about-grid {
     display: grid;
