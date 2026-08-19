@@ -547,9 +547,21 @@
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: baseline;
-    border-bottom: 1px solid var(--ink);
-    padding-bottom: 0.85rem;
-    margin-bottom: 4rem;
+    position: relative;
+    padding-top: 1.5rem;
+    margin-bottom: 3.25rem;
+  }
+  /* a short accent bar above the title instead of a rule beneath it: it marks
+     the section without drawing a line across the whole measure */
+  .section-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 54px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--accent);
   }
   .section-num {
     font-size: 11px;
