@@ -41,7 +41,7 @@
     --surface: #ffffff;
     --petal: #ead7ac;
     --page-wash: radial-gradient(55% 26% at 90% 13%, rgba(241,217,150,0.44), transparent 60%),radial-gradient(52% 24% at 7% 23%, rgba(150,186,220,0.46), transparent 60%),radial-gradient(48% 24% at 97% 38%, rgba(150,186,220,0.30), transparent 64%),radial-gradient(46% 23% at 2% 52%, rgba(241,217,150,0.28), transparent 64%),radial-gradient(50% 25% at 99% 66%, rgba(150,186,220,0.30), transparent 64%),radial-gradient(46% 23% at 1% 79%, rgba(241,217,150,0.26), transparent 64%),radial-gradient(44% 22% at 96% 88%, rgba(150,186,220,0.24), transparent 64%);
-    --hero-grad: linear-gradient(180deg,#cdddea 0%,#cdddea 62%,rgba(205,221,234,0.55) 84%,rgba(205,221,234,0) 100%);
+    --hero-grad: linear-gradient(180deg,#cfe2f2 0%,#cfe2f2 62%,rgba(207,226,242,0.55) 84%,rgba(207,226,242,0) 100%);
     --serif: 'Fraunces', Georgia, serif;
     --script: 'Pinyon Script', cursive;
     --sans: 'Schibsted Grotesk', system-ui, sans-serif;
@@ -72,7 +72,7 @@
     --surface: #3a2a20;
     --petal: #5a4126;
     --page-wash: radial-gradient(55% 26% at 90% 13%, rgba(210,180,110,0.15), transparent 60%),radial-gradient(52% 24% at 7% 23%, rgba(120,150,200,0.20), transparent 60%),radial-gradient(48% 24% at 97% 38%, rgba(120,150,200,0.15), transparent 64%),radial-gradient(46% 23% at 2% 52%, rgba(210,180,110,0.12), transparent 64%),radial-gradient(50% 25% at 99% 66%, rgba(120,150,200,0.15), transparent 64%),radial-gradient(46% 23% at 1% 79%, rgba(210,180,110,0.11), transparent 64%),radial-gradient(44% 22% at 96% 88%, rgba(120,150,200,0.13), transparent 64%);
-    --hero-grad: linear-gradient(180deg,#2c3142 0%,#2c3142 62%,rgba(44,49,66,0.55) 84%,rgba(44,49,66,0) 100%);
+    --hero-grad: linear-gradient(180deg,#313850 0%,#313850 62%,rgba(49,56,80,0.55) 84%,rgba(49,56,80,0) 100%);
     --nav-bg: #241a14;
     --about-bg: #20242b;
     --about-bg-rgb: 32,36,43;
@@ -1164,6 +1164,11 @@
   .theme-toggle { border-radius: 20px; padding: 5px 12px; }
 
   /* ── Hero ── */
+  /* The timeline label and credit meta sit on the gradient, where --muted
+     falls below AA in both themes (light 3.96, dark 3.85). Scoped per theme:
+     a darker brown on the light gradient, a lifted one on the dark. */
+  .hero { --muted: #665237; }
+  [data-theme="dark"] .hero { --muted: #bd9c85; }
   .hero { display: block; min-height: 0; border-bottom: none; background-image: var(--hero-grad); background-repeat: no-repeat; }
   .hero-panel { margin: 0; border-radius: 0; overflow: visible; background: transparent; }
   .hero-grid { display: flex; flex-wrap: wrap; align-items: flex-start; gap: clamp(0.75rem, 1.5vw, 1.25rem); padding: 3rem 3rem 3.5rem; }
