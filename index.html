@@ -550,20 +550,8 @@
     position: relative;
     margin-bottom: 3.25rem;
   }
-  /* a watercolor bloom behind the title, echoing the hero and the logo mark.
-     Sits behind the text and out of the accessibility tree. */
-  .section-bloom {
-    position: absolute;
-    left: -46px;
-    top: 50%;
-    transform: translateY(-52%);
-    width: 148px;
-    height: 134px;
-    opacity: 0.62;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .section-header > :not(.section-bloom) { position: relative; z-index: 1; }
+  /* the heading carries the accent itself — no rule, bar or ornament, so
+     nothing competes with the word */
   .section-num {
     font-size: 11px;
     font-weight: 500;
@@ -576,7 +564,7 @@
     font-size: 2.625rem;
     font-weight: 500;
     letter-spacing: -0.015em;
-    color: var(--ink);
+    color: var(--accent);
   }
 
   /* ── EXPERIENCE ── */
@@ -2027,7 +2015,6 @@
 <section id="experience">
   <div class="section-inner">
     <div class="section-header reveal">
-      <svg class="section-bloom" width="120" height="109" viewBox="0 0 220 200" aria-hidden="true"><g filter="url(#wcfBig)"><ellipse cx="70" cy="120" rx="46" ry="38" fill="url(#periF)"/><ellipse cx="150" cy="80" rx="50" ry="42" fill="url(#periF)"/><ellipse cx="110" cy="100" rx="34" ry="44" fill="url(#blushF)" transform="rotate(-18 110 100)"/><ellipse cx="140" cy="118" rx="40" ry="30" fill="url(#blushF)" transform="rotate(22 140 118)"/><ellipse cx="86" cy="92" rx="38" ry="30" fill="url(#blushF)" transform="rotate(28 86 92)"/><ellipse cx="116" cy="104" rx="20" ry="20" fill="url(#amberF)"/></g></svg>
       <h2 class="section-title">Experience</h2>
     </div>
 
@@ -2086,7 +2073,6 @@
 <section id="about">
   <div class="section-inner">
     <div class="section-header reveal">
-      <svg class="section-bloom" width="120" height="109" viewBox="0 0 220 200" aria-hidden="true"><g filter="url(#wcfBig)"><ellipse cx="70" cy="120" rx="46" ry="38" fill="url(#periF)"/><ellipse cx="150" cy="80" rx="50" ry="42" fill="url(#periF)"/><ellipse cx="110" cy="100" rx="34" ry="44" fill="url(#blushF)" transform="rotate(-18 110 100)"/><ellipse cx="140" cy="118" rx="40" ry="30" fill="url(#blushF)" transform="rotate(22 140 118)"/><ellipse cx="86" cy="92" rx="38" ry="30" fill="url(#blushF)" transform="rotate(28 86 92)"/><ellipse cx="116" cy="104" rx="20" ry="20" fill="url(#amberF)"/></g></svg>
       <h2 class="section-title">About</h2>
     </div>
     <div class="about-grid">
