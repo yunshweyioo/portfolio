@@ -826,6 +826,35 @@
   .cs-artifact-title { font-family: var(--serif); font-size: 0.95rem; color: var(--panel-head-ink); }
   .cs-artifact-note { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
   .art-scroll { overflow-x: auto; }
+  /* Monarch artifact: the codes as the supervisor saw them, then grouped */
+  .art-ba { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .art-ba-side { padding: 1.2rem 1.35rem; }
+  .art-ba-side + .art-ba-side { border-left: 1px solid var(--border); }
+  .art-ba-label {
+    font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); font-weight: 700; margin-bottom: 0.95rem;
+  }
+  .art-ba-flat { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 12px; }
+  .art-ba-flat li { font-size: 12px; color: var(--muted); font-weight: 400; }
+  .art-ba-group { margin-bottom: 0.9rem; }
+  .art-ba-seq {
+    font-family: var(--serif); font-size: 0.98rem; color: var(--ink);
+    display: flex; align-items: baseline; gap: 0.55rem; flex-wrap: wrap;
+  }
+  .art-ba-abbr {
+    font-family: var(--sans); font-size: 9px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent); font-weight: 600;
+    border: 1px solid rgba(var(--accent-rgb), 0.35); border-radius: 100px; padding: 2px 7px;
+  }
+  .art-ba-codes {
+    font-size: 12px; color: var(--ink-soft); margin-top: 5px;
+    padding-left: 0.85rem; border-left: 2px solid rgba(var(--accent-rgb), 0.3);
+  }
+  .art-ba-caption { margin-top: 1.1rem; font-size: 11.5px; line-height: 1.55; color: var(--muted); }
+  @media (max-width: 768px) {
+    .art-ba { grid-template-columns: minmax(0, 1fr); }
+    .art-ba-side + .art-ba-side { border-left: 0; border-top: 1px solid var(--border); }
+  }
   /* the qualifier that makes the before/after readable at a glance */
   .art-th-sub {
     display: block; margin-top: 3px; font-size: 9px; font-weight: 400;
@@ -1790,27 +1819,41 @@
 
       <div class="cs-artifact">
         <div class="cs-artifact-head">
-          <span class="cs-artifact-title">Sample — what a sequence is called vs. what ShotGrid calls it</span>
+          <span class="cs-artifact-title">Sample — what the supervisor saw in ShotGrid, before and after</span>
           <span class="cs-artifact-note">Recreated with placeholder data · production data under NDA</span>
         </div>
-        <div class="art-scroll">
-          <table class="art-table">
-            <thead>
-              <tr>
-                <th class="col-tight">Ep</th>
-                <th>Sequence name<span class="art-th-sub">what the team said</span></th>
-                <th class="col-tight">Abbrev</th>
-                <th>ShotGrid codes<span class="art-th-sub">what the system said</span></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td class="col-tight">101</td><td>Cargo Ship Attack</td><td class="col-tight">CSA</td><td class="art-codes">101_050 · 101_056 · 101_056A · 101_058</td></tr>
-              <tr><td class="col-tight">103</td><td>Desert Crossing</td><td class="col-tight">DXC</td><td class="art-codes">103_002 – 103_005</td></tr>
-              <tr><td class="col-tight">103</td><td>Tunnel Collapse</td><td class="col-tight">—</td><td class="art-codes">103_014 · 103_016 · 103_016A</td></tr>
-              <tr><td class="col-tight">105</td><td>Rooftop Evacuation</td><td class="col-tight">REV</td><td class="art-codes">105_030 – 105_034</td></tr>
-              <tr><td class="col-tight">106</td><td>Storm Landing</td><td class="col-tight">SLD</td><td class="art-codes">106_012 · 106_014</td></tr>
-            </tbody>
-          </table>
+        <div class="art-ba">
+          <div class="art-ba-side">
+            <div class="art-ba-label">Before</div>
+            <ul class="art-ba-flat">
+              <li>101_050</li><li>101_056</li><li>101_056A</li><li>101_058</li>
+              <li>103_002</li><li>103_003</li><li>103_004</li><li>103_005</li>
+              <li>103_014</li><li>103_016</li><li>103_016A</li>
+              <li>105_030</li><li>105_031</li><li>105_032</li><li>105_033</li><li>105_034</li>
+              <li>106_012</li><li>106_014</li>
+            </ul>
+            <p class="art-ba-caption">A flat list of shot codes. Nothing showed which sequence a code belonged to, so every note had to be decoded before anyone could act on it.</p>
+          </div>
+          <div class="art-ba-side">
+            <div class="art-ba-label">After</div>
+            <div class="art-ba-group">
+              <div class="art-ba-seq">Cargo Ship Attack <span class="art-ba-abbr">CSA</span></div>
+              <div class="art-ba-codes">101_050 · 101_056 · 101_056A · 101_058</div>
+            </div>
+            <div class="art-ba-group">
+              <div class="art-ba-seq">Desert Crossing <span class="art-ba-abbr">DXC</span></div>
+              <div class="art-ba-codes">103_002 · 103_003 · 103_004 · 103_005</div>
+            </div>
+            <div class="art-ba-group">
+              <div class="art-ba-seq">Tunnel Collapse <span class="art-ba-abbr">TNC</span></div>
+              <div class="art-ba-codes">103_014 · 103_016 · 103_016A</div>
+            </div>
+            <div class="art-ba-group">
+              <div class="art-ba-seq">Rooftop Evacuation <span class="art-ba-abbr">REV</span></div>
+              <div class="art-ba-codes">105_030 · 105_031 · 105_032 · 105_033 · 105_034</div>
+            </div>
+            <p class="art-ba-caption">Every code mapped to the sequence name people actually used, built into ShotGrid itself. In review the supervisor clicks a sequence and every shot under it opens with it.</p>
+          </div>
         </div>
       </div>
 
