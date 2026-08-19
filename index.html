@@ -904,20 +904,20 @@
   @media (max-width: 768px) { .art-note-row { grid-template-columns: 1fr; gap: 0.2rem; } }
 
   /* ── ABOUT ── */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.15fr;
-    gap: 4rem;
-    align-items: start;
-  }
+  /* About deliberately does NOT use Experience's rail-beside-content shape:
+     a full-width statement, a single measure of prose, then facts as a
+     horizontal strip. Different rhythm, same type scale. */
   .about-lead {
     font-family: var(--serif);
-    font-size: clamp(1.35rem, 2vw, 1.7rem);
-    line-height: 1.32;
+    font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+    line-height: 1.18;
+    letter-spacing: -0.015em;
     color: var(--ink);
-    margin-bottom: 1.6rem;
+    max-width: 21ch;
+    margin-bottom: 1.9rem;
   }
   .about-lead em { font-style: italic; color: var(--accent); }
+  .about-body { max-width: 60ch; }
   .about-body p {
     font-size: 16px;
     color: var(--ink-soft);
@@ -927,9 +927,15 @@
   }
   .about-body p:last-child { margin-bottom: 0; }
   .about-body strong { color: var(--ink); font-weight: 600; }
-  @media (max-width: 768px) {
-    .about-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .about-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+    gap: 1.7rem 2rem;
+    margin-top: 3.25rem;
+    padding-top: 1.9rem;
+    border-top: 1px solid var(--border);
   }
+  .abt-cell { display: flex; flex-direction: column; gap: 6px; }
 
   /* ── ABOUT: chips + meta rail ── */
   .abt-groups {
@@ -960,17 +966,11 @@
   }
   .abt-chip:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
 
-  .about-side { display: flex; flex-direction: column; }
-  .abt-row {
-    display: flex; justify-content: space-between; align-items: baseline; gap: 1.5rem;
-    padding: 0.85rem 0; border-bottom: 1px solid var(--border);
-  }
-  .abt-row:first-child { padding-top: 0; }
   .abt-k {
-    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--muted); font-weight: 600; white-space: nowrap;
+    font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); font-weight: 700;
   }
-  .abt-v { font-size: 13px; color: var(--ink); font-weight: 600; text-align: right; }
+  .abt-v { font-size: 14px; color: var(--ink); font-weight: 500; line-height: 1.4; }
   .abt-open { color: var(--accent); }
 
   /* ── FOOTER / CONTACT ── */
@@ -2044,22 +2044,19 @@
     <div class="section-header reveal">
       <h2 class="section-title">About</h2>
     </div>
-    <div class="about-grid">
-      <div class="reveal reveal-delay-1">
-        <p class="about-lead">Coordination is mostly deciding <em>who needs to know what, and when.</em></p>
-        <div class="about-body">
-          <p>My approach is simple: <strong>build the system before the chaos arrives.</strong> Clean trackers, clear notes, no surprises in reviews. My productions don't miss deadlines — not because nothing goes wrong, but because it gets flagged a day early.</p>
-        </div>
+    <div class="about-intro reveal reveal-delay-1">
+      <p class="about-lead">Coordination is mostly deciding <em>who needs to know what, and when.</em></p>
+      <div class="about-body">
+        <p>My approach is simple: <strong>build the system before the chaos arrives.</strong> Clean trackers, clear notes, no surprises in reviews. My productions don't miss deadlines — not because nothing goes wrong, but because it gets flagged a day early.</p>
       </div>
+    </div>
 
-      <div class="about-side reveal reveal-delay-2">
-        <div class="abt-row"><span class="abt-k">Based in</span><span class="abt-v">San Francisco, CA</span></div>
-        <div class="abt-row"><span class="abt-k">Experience</span><span class="abt-v">4+ years</span></div>
-        <div class="abt-row"><span class="abt-k">Education</span><span class="abt-v">B.S. Visual Communications</span></div>
-        <div class="abt-row"><span class="abt-k">School</span><span class="abt-v">S.I. Newhouse, Syracuse</span></div>
-        <div class="abt-row"><span class="abt-k">Status</span><span class="abt-v abt-open">Open to new roles</span></div>
-
-      </div>
+    <div class="about-facts reveal reveal-delay-2">
+      <div class="abt-cell"><span class="abt-k">Based in</span><span class="abt-v">San Francisco, CA</span></div>
+      <div class="abt-cell"><span class="abt-k">Experience</span><span class="abt-v">4+ years</span></div>
+      <div class="abt-cell"><span class="abt-k">Education</span><span class="abt-v">B.S. Visual Communications</span></div>
+      <div class="abt-cell"><span class="abt-k">School</span><span class="abt-v">S.I. Newhouse, Syracuse</span></div>
+      <div class="abt-cell"><span class="abt-k">Status</span><span class="abt-v abt-open">Open to new roles</span></div>
     </div>
 
     <div class="abt-groups reveal reveal-delay-3">
