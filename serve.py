@@ -11,7 +11,7 @@ import http.server
 import os
 import sys
 
-WATCH = "yun_oo_portfolio.html"
+WATCH = "index.html"
 
 RELOAD_SNIPPET = b"""
 <script>
