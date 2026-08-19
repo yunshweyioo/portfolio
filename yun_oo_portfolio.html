@@ -826,6 +826,12 @@
   .cs-artifact-title { font-family: var(--serif); font-size: 0.95rem; color: var(--panel-head-ink); }
   .cs-artifact-note { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
   .art-scroll { overflow-x: auto; }
+  /* the qualifier that makes the before/after readable at a glance */
+  .art-th-sub {
+    display: block; margin-top: 3px; font-size: 9px; font-weight: 400;
+    letter-spacing: 0.04em; text-transform: none; color: var(--muted);
+  }
+  .art-table td.art-codes { color: var(--ink); font-weight: 400; letter-spacing: 0.01em; }
   .art-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
   .art-table th {
     text-align: left; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
@@ -1784,18 +1790,25 @@
 
       <div class="cs-artifact">
         <div class="cs-artifact-head">
-          <span class="cs-artifact-title">Sample — sequence code reference map</span>
+          <span class="cs-artifact-title">Sample — what a sequence is called vs. what ShotGrid calls it</span>
           <span class="cs-artifact-note">Recreated with placeholder data · production data under NDA</span>
         </div>
         <div class="art-scroll">
           <table class="art-table">
-            <thead><tr><th>Internal code</th><th>Sequence name</th><th>Episode</th><th>Shots</th><th>Status</th></tr></thead>
+            <thead>
+              <tr>
+                <th class="col-tight">Ep</th>
+                <th>Sequence name<span class="art-th-sub">what the team said</span></th>
+                <th class="col-tight">Abbrev</th>
+                <th>ShotGrid codes<span class="art-th-sub">what the system said</span></th>
+              </tr>
+            </thead>
             <tbody>
-              <tr><td>SQ1140</td><td>Cargo Ship Attack</td><td>E01</td><td>38</td><td><span class="chip chip-approved">Approved</span></td></tr>
-              <tr><td>SQ1170</td><td>Desert Crossing</td><td>E03</td><td>24</td><td><span class="chip chip-progress">In progress</span></td></tr>
-              <tr><td>SQ1210</td><td>Tunnel Collapse</td><td>E03</td><td>31</td><td><span class="chip chip-progress">In progress</span></td></tr>
-              <tr><td>SQ1240</td><td>Rooftop Evacuation</td><td>E05</td><td>17</td><td><span class="chip chip-delivered">Delivered</span></td></tr>
-              <tr><td>SQ1290</td><td>Storm Landing</td><td>E06</td><td>12</td><td><span class="chip chip-hold">On hold</span></td></tr>
+              <tr><td class="col-tight">101</td><td>Cargo Ship Attack</td><td class="col-tight">CSA</td><td class="art-codes">101_050 · 101_056 · 101_056A · 101_058</td></tr>
+              <tr><td class="col-tight">103</td><td>Desert Crossing</td><td class="col-tight">DXC</td><td class="art-codes">103_002 – 103_005</td></tr>
+              <tr><td class="col-tight">103</td><td>Tunnel Collapse</td><td class="col-tight">—</td><td class="art-codes">103_014 · 103_016 · 103_016A</td></tr>
+              <tr><td class="col-tight">105</td><td>Rooftop Evacuation</td><td class="col-tight">REV</td><td class="art-codes">105_030 – 105_034</td></tr>
+              <tr><td class="col-tight">106</td><td>Storm Landing</td><td class="col-tight">SLD</td><td class="art-codes">106_012 · 106_014</td></tr>
             </tbody>
           </table>
         </div>
