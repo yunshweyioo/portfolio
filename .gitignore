@@ -16,3 +16,6 @@ node_modules/
 
 # Superpowers brainstorm working files (local, not shared)
 .superpowers/
+
+# Local draft versions — never publish
+yun_oo_portfolio_v*.html
